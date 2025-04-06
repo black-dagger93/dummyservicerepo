@@ -1,0 +1,3 @@
+- Enable truststore verification and configure truststore
+- K8s Network Policy
+- NGINX internal ingress with TLS cert
