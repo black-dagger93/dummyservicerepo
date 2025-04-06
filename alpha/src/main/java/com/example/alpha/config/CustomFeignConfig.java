@@ -3,6 +3,7 @@ package com.example.alpha.config;
 import feign.Client;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -13,6 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 
 @Configuration
+@Profile("azure")
 public class CustomFeignConfig {
 
     @Bean
