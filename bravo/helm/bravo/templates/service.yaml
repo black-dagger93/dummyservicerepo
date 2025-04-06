@@ -7,8 +7,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 80
-      targetPort: http
+    - port: 443
+      targetPort: https
       protocol: TCP
   selector:
     {{- include "bravo.selectorLabels" . | nindent 4 }}
