@@ -1,6 +1,7 @@
 package com.example.charlie.controller;
 
 import com.example.charlie.model.Charlie;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CharlieController {
 
     @GetMapping
-    Charlie getCharlie() {
-        return new Charlie("This is Charlie");
+    Charlie getCharlie(HttpServletRequest request) {
+        String scheme = request.isSecure() ? "https" : "http";
+        String message = String.format("This is Charlie, ACK [%s] request", scheme);
+        return new Charlie(message);
     }
 }
